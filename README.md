@@ -23,4 +23,5 @@ Hệ thống sẽ tự động tính toán khoảng lệch và hiển thị ph�
 Hệ thống này được thiết kế dựa trên ý tưởng và mã nguồn của K.u.l.l và Phòng chill fansub. Tuy nhiên extension này được đơn giản hóa ở mức tối đa, phục vụ riêng cho phong cách thiết kế phụ đề của Hola Anisong: Đơn giản, không hiệu ứng. Vậy nên các hiệu ứng và tính năng phức tạp sẽ bị lược bỏ, nhất là các hiệu ứng của định dạng .ass dù vẫn chạy nhưng sẽ không được tập trung tối ưu.
 Nếu muốn sử dụng các hiệu ứng phức tạp, tôi đề xuất extension của K.u.l.l và Phòng chill fansub dưới đây:
 <a href="https://github.com/zingky/Kull-Vietsub">Kull-Vietsub extension<\a>
+<br>
 <a href="https://github.com/PhongChillFansub/ASS-CEE">ASS-CEE by Phòng chill fansub<\a>
