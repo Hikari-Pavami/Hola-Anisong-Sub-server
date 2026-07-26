@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>HOLA ANISONG</h1>
+            <div class="header-buttons">
+                <button id="btn-toggle-ext" class="btn" style="font-size: 11px; padding: 6px 10px; border-radius: 0; background-color: var(--primary-green); color: #121212;">ĐANG BẬT</button>
+                <a href="https://hola-guide.pages.dev" target="_blank" class="btn btn-guide">HƯỚNG DẪN</a>
+                <button id="btn-close" class="btn btn-close" title="Đóng cửa sổ">X</button>
+            </div>
+        </header>
+
+        <div class="section search-section">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm phim/game/nhạc...">
+            <div id="searchResults" class="results-box"></div>
+        </div>
+
+        <div class="section local-upload-section">
+            <label>Tải phụ đề từ máy (.ass, .srt, .vtt)</label>
+            <input type="file" id="localSubUpload" accept=".ass,.srt,.vtt">
+        </div>
+
+        <div class="section sync-section">
+            <label>Đồng bộ thời gian</label>
+            <div class="sync-controls">
+                <button id="btn-sync-now" class="btn btn-action">KHỚP MỐC BẮT ĐẦU</button>
+                <input type="number" id="offsetInput" value="0" step="0.1" placeholder="Giây" title="Độ lệch (giây)">
+            </div>
+        </div>
+
+<div class="section style-section">
+    <label style="display:flex; justify-content:space-between; align-items:center;">
+        CHỌN KIỂU CHỮ
+        <label style="margin:0; font-weight:normal; text-transform:none; font-size:12px; cursor:pointer;">
+            <input type="checkbox" id="useCustomStyle" checked> Dùng style tùy chỉnh
+        </label>
+    </label>
+    <div class="style-grid">
+        <div class="style-control">
+            <span class="control-label">Màu chữ:</span>
+            <input type="color" id="fontColor" value="#ffffff">
+        </div>
+        <div class="style-control">
+            <label style="margin:0; font-weight:500; font-size:13px; text-transform:none; display:flex; align-items:center; gap:5px; cursor:pointer;">
+                <input type="checkbox" id="outlineEnabled" checked> Màu viền:
+            </label>
+            <input type="color" id="outlineColor" value="#000000">
+        </div>
+        
+        <div class="style-control">
+            <span class="control-label">Độ dày viền (px):</span>
+            <input type="number" id="outlineThickness" value="0.7" min="0" max="10" step="0.1" style="width: 80px;">
+        </div>
+        <div class="style-control">
+            <span class="control-label">Cỡ chữ (px):</span>
+            <input type="number" id="fontSize" value="20" min="10" max="100" style="width: 80px;">
+        </div>
+        <div class="style-control checkbox-group">
+            <label><input type="checkbox" id="fontBold"> <p style="font-weight: bold;">Đậm</p></label>
+            <label><input type="checkbox" id="fontItalic"> <p style="font-style: italic;">Nghiêng</p></label>
+            <label><input type="checkbox" id="fontUnderline"> <p style="text-decoration: underline;">Gạch chân</p></label>
+        </div>
+        <div class="style-control-file">
+            <span class="control-label">Tải Font chữ tùy chỉnh (.ttf, .woff2):</span>
+            <input type="file" id="fontUpload" accept=".ttf,.woff2">
+        </div>
+    </div>
+</div>
+
+        <div id="statusMsg" class="status-message"></div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>

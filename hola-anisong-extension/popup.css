@@ -1,0 +1,242 @@
+:root
+{
+    --bg-color: #c1f89e;
+    --primary-yellow: #FFD54F;
+    --primary-yellow-hover: #FFC107;
+    --primary-green: #81C784;
+    --primary-green-hover: #66BB6A;
+    --text-main: #212121;
+    --border-color: #212121;
+}
+
+body
+{
+    width: 450px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+.container
+{
+    padding: 15px;
+}
+
+header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+h1
+{
+    font-size: 18px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section
+{
+    margin-bottom: 20px;
+}
+
+label
+{
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+input[type="text"], input[type="number"], input[type="file"]
+{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    background: #fff;
+    font-size: 14px;
+    outline: none;
+}
+
+input[type="text"]:focus, input[type="number"]:focus
+{
+    border-color: var(--primary-green);
+}
+
+.btn {
+    padding: 8px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    color: var(--text-main);
+    transition: all 0.15s ease;
+}
+
+.btn-guide
+{
+    background-color: var(--primary-yellow);
+    font-size: 12px;
+}
+.btn-guide:hover
+{
+    background-color: var(--primary-yellow-hover);
+    border-color: var(--primary-green);
+}
+
+.sync-controls
+{
+    display: flex;
+    gap: 5px;
+}
+.sync-controls input
+{
+    width: 70px;
+}
+
+.btn-action
+{
+    background-color: var(--primary-green);
+    flex-grow: 1;
+}
+.btn-action:hover
+{
+    background-color: var(--primary-green-hover);
+    border-color: var(--primary-yellow);
+}
+
+.btn-apply
+{
+    background-color: var(--bg-color);
+}
+.btn-apply:hover
+{
+    background-color: var(--primary-yellow);
+}
+
+.style-grid
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.style-control
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.style-control-file
+{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-label
+{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+input[type="color"]
+{
+    width: 80px;
+    height: 32px;
+    padding: 0;
+    border: 2px solid var(--border-color);
+    border-radius: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.checkbox-group
+{
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.checkbox-group label
+{
+    display: flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: normal;
+    text-transform: none;
+    margin: 0;
+    cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"]
+{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.results-box
+{
+    max-height: 150px;
+    overflow-y: auto;
+    border: 2px solid var(--border-color);
+    border-top: none;
+    border-radius: 0;
+    display: none;
+}
+
+.result-item
+{
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    font-size: 13px;
+    cursor: pointer;
+}
+.result-item:hover
+{
+    background-color: var(--primary-yellow);
+}
+.result-item:last-child
+{
+    border-bottom: none;
+}
+
+.status-message
+{
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    min-height: 15px;
+}
+
+.header-buttons
+{
+    display: flex;
+    gap: 5px;
+}
+
+.btn-close
+{
+    background-color: #FF5252;
+    color: #ffffff;
+}
+
+.btn-close:hover
+{
+    background-color: #FF1744;
+    border-color: var(--primary-yellow);
+}
