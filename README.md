@@ -1,5 +1,6 @@
 # Hola-Anisong-Sub-server
 Hệ thống chèn bản dịch của Hola Anisong vào bất kì video YouTube nào.
+<img width="559" height="772" alt="_D__hola-anisong-extension_popup html" src="https://github.com/user-attachments/assets/5fec88a7-4919-4af3-a7e0-0ba23dd89f3c" />
 
 <h1>1. Cách mở tiện ích</h1>
 <br>
