@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola Anisong Sub-Ser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&family=Be+Vietnam+Pro:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-brand">
+                <h1>HOLA ANISONG</h1>
+                <span class="version-tag" id="headerVersionTag">v1.1.0</span>
+            </div>
+            <div class="header-buttons">
+                <button id="btn-toggle-ext" class="btn btn-toggle" title="Bật/Tắt hiển thị phụ đề">ĐANG BẬT</button>
+                <a href="https://hola-guide.pages.dev" target="_blank" class="btn btn-guide" title="Xem hướng dẫn sử dụng">HƯỚNG DẪN</a>
+                <button id="btn-close" class="btn btn-close" title="Đóng cửa sổ">X</button>
+            </div>
+        </header>
+
+        <nav class="tabs-nav">
+            <button class="tab-btn active" data-tab="tab-subs">
+                PHỤ ĐỀ & ĐỒNG BỘ
+            </button>
+            <button class="tab-btn" data-tab="tab-styles">
+                KIỂU CHỮ
+            </button>
+            <button class="tab-btn" data-tab="tab-version">
+                PHIÊN BẢN <span id="tabVersionBadge" class="tab-badge" style="display:none;">MỚI</span>
+            </button>
+        </nav>
+
+        <div id="tab-subs" class="tab-pane active">
+            <div class="section search-section">
+                <label for="searchInput">TÌM KIẾM TỪ MÁY CHỦ</label>
+                <div class="search-input-wrap">
+                    <input type="text" id="searchInput" placeholder="Tìm kiếm phim/game hoặc tên bài hát" autocomplete="off">
+                </div>
+                <div id="searchResults" class="results-box"></div>
+            </div>
+
+            <div class="section local-upload-section">
+                <label for="localSubUpload">HOẶC TẢI TỪ MÁY (.ASS, .SRT, .VTT)</label>
+                <input type="file" id="localSubUpload" accept=".ass,.srt,.vtt">
+            </div>
+
+            <div class="section sync-section">
+                <label>ĐỒNG BỘ THỜI GIAN</label>
+                <div class="sync-controls">
+                    <button id="btn-sync-now" class="btn btn-action" title="Khớp thời gian video với câu đầu tiên">KHỚP MỐC BẮT ĐẦU</button>
+                </div>
+                <div class="offset-adjust-row">
+                    <button id="btn-offset-minus" class="btn btn-mini" title="Lùi phụ đề 0.5 giây">-0.5s</button>
+                    <div class="offset-input-wrap">
+                        <input type="number" id="offsetInput" value="0" step="0.1" placeholder="Giây" title="Độ lệch thời gian (giây)">
+                        <span class="offset-unit">s</span>
+                    </div>
+                    <button id="btn-offset-plus" class="btn btn-mini" title="Tiến phụ đề 0.5 giây">+0.5s</button>
+                    <button id="btn-offset-reset" class="btn btn-mini btn-reset" title="Đặt lại độ lệch về 0">0s</button>
+                </div>
+                <div class="field-hint">Bấm "Khớp mốc" lúc nhạc vào câu đầu, hoặc dùng +/- để tinh chỉnh.</div>
+            </div>
+        </div>
+
+        <div id="tab-styles" class="tab-pane">
+            <div class="section style-header-row">
+                <label class="toggle-custom-label">
+                    <input type="checkbox" id="useCustomStyle" checked>
+                    <span>DÙNG STYLE TÙY CHỈNH</span>
+                </label>
+                <span class="style-note">(Tắt để dùng style gốc của file .ass)</span>
+            </div>
+
+            <div class="preview-box-container">
+                <div class="preview-label">XEM TRƯỚC PHỤ ĐỀ</div>
+                <div class="preview-stage" id="previewStage">
+                    <div class="preview-sub-line" id="previewText">
+                        Hola Anisong Subtitle
+                    </div>
+                </div>
+            </div>
+
+            <div class="style-grid">
+                <div class="style-row-two">
+                    <div class="style-control">
+                        <span class="control-label">Màu chữ:</span>
+                        <input type="color" id="fontColor" value="#ffffff">
+                    </div>
+                    <div class="style-control">
+                        <label class="control-label-check">
+                            <input type="checkbox" id="outlineEnabled" checked> Màu viền:
+                        </label>
+                        <input type="color" id="outlineColor" value="#000000">
+                    </div>
+                </div>
+
+                <div class="style-row-two">
+                    <div class="style-control">
+                        <span class="control-label">Độ dày viền (px):</span>
+                        <input type="number" id="outlineThickness" value="1.5" min="0" max="10" step="0.1" style="width: 75px;">
+                    </div>
+                    <div class="style-control">
+                        <span class="control-label">Cỡ chữ (px):</span>
+                        <input type="number" id="fontSize" value="22" min="10" max="100" style="width: 75px;">
+                    </div>
+                </div>
+
+                <div class="style-control style-font-row">
+                    <span class="control-label">Phông chữ:</span>
+                    <select id="fontFamilySelect" class="select-font">
+                        <option value="montserrat" selected>Montserrat (Nên dùng)</option>
+                        <option value="be-vietnam-pro">Be Vietnam Pro</option>
+                        <option value="system">Segoe UI</option>
+                    </select>
+                </div>
+
+                <div class="style-control checkbox-group">
+                    <label><input type="checkbox" id="fontBold" checked> <strong style="font-weight: 800;">Đậm</strong></label>
+                    <label><input type="checkbox" id="fontItalic"> <em style="font-style: italic;">Nghiêng</em></label>
+                    <label><input type="checkbox" id="fontUnderline"> <u style="text-decoration: underline;">Gạch chân</u></label>
+                </div>
+
+                <div class="style-control-file">
+                    <div class="file-label-row">
+                        <span class="control-label">Tải Font chữ riêng (.ttf, .woff2):</span>
+                        <button id="btn-clear-font" class="btn-text-clear" type="button" style="display:none;" title="Xóa font riêng đã nạp">Xóa font riêng</button>
+                    </div>
+                    <input type="file" id="fontUpload" accept=".ttf,.woff2">
+                    <div id="customFontStatus" class="custom-font-badge" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-version" class="tab-pane">
+            <div class="version-card">
+                <div class="version-card-header">
+                    <span class="version-label">PHIÊN BẢN HIỆN TẠI</span>
+                    <span class="version-num" id="currentVersionDisplay">v1.1.0</span>
+                </div>
+                <div id="versionStatusBox" class="version-status-box status-checking">
+                    Nhấn nút bên dưới để kiểm tra cập nhật.
+                </div>
+                <button id="btn-check-version" class="btn btn-action btn-full">KIỂM TRA CẬP NHẬT NGAY</button>
+            </div>
+
+            <div id="updateAvailableCard" class="update-card" style="display:none;">
+                <div class="update-header">
+                    <span class="update-badge">ĐÃ CÓ PHIÊN BẢN MỚI.</span>
+                    <strong id="newVersionTag">v1.2.0</strong>
+                </div>
+                <div class="update-meta">
+                    <span>Phát hành: <span id="newVersionDate">--</span></span>
+                </div>
+                <div class="changelog-box">
+                    <div class="changelog-title">Tính năng mới:</div>
+                    <ul id="changelogList"></ul>
+                </div>
+                <a id="btn-download-update" href="#" target="_blank" class="btn btn-download-update">
+                    TẢI BẢN MỚI TẠI ĐÂY
+                </a>
+            </div>
+
+            <div class="version-help-box">
+                <div class="help-title">CÁCH CẬP NHẬT NHANH:</div>
+                <ol class="help-steps">
+                    <li>Tải file nén mới về và giải nén.</li>
+                    <li>Chạy file <code>install.bat</code> đi kèm.</li>
+                    <li>Mở trang Tiện ích và bấm nút <strong>Tải lại (Reload)</strong>.</li>
+                </ol>
+                <!-- <div class="help-docs-link">
+                    Xem hướng dẫn chi tiết tại: <code>backend_howto.md</code>
+                </div> -->
+            </div>
+        </div>
+
+        <div id="statusMsg" class="status-message"></div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

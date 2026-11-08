@@ -1,0 +1,15 @@
+{
+  "version": "1.1.0",
+  "name": "Hola Anisong Sub-Ser",
+  "release_date": "2026-11-08",
+  "download_url": "https://github.com/holasub/hola-anisong-extension/releases/latest",
+  "changelog": [
+    "Thiết kế lại giao diện.",
+    "Bổ sung khung Live Preview xem trước kiểu phụ đề",
+    "Thêm font Montserrat & Be Vietnam Pro",
+    "Sửa lỗi viền lẹm chữ.",
+    "Bổ sung các nút căn chỉnh nhanh độ lệch thời gian (+-0.5s, 0s)",
+    "Tự động phát hiện và thông báo phiên bản mới.",
+    "Cung cấp bộ script cài đặt tự động cho Windows"
+  ]
+}
