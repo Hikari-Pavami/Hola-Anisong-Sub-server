@@ -8,15 +8,24 @@ Tiện ích này không được đăng tải lên Chrome Web Store công khai. 
 ## Cách 1: Cài đặt Tự Động (Dùng cho Windows)
 
 1. Giải nén file nén `.zip` vừa tải về vào một thư mục bất kì.
+![](./pics/2026-11-08%2010-35-15.mp4_snapshot_00.56.441.png)
+![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.02.572.png)
 2. Click đúp chuột vào file **`install.bat`**.
 3. Cửa sổ cài đặt sẽ hiện ra:
    - Các file sẽ tự động được copy vào thư mục an toàn của hệ thống: `%LOCALAPPDATA%\HolaAnisongSubSer`.
    - Đường dẫn này sẽ tự động được sao chép vào bộ nhớ tạm (Clipboard).
    - Nhập số tương ứng với trình duyệt bạn muốn mở (1: Chrome, 2: Edge, 3: Brave, 4: Cốc Cốc).
+   ![](./pics/image1.png)
 4. Trên trang tiện ích của trình duyệt vừa mở ra:
    - Bật công tắc **"Chế độ cho nhà phát triển"** (Developer Mode) ở góc trên bên phải.
+   ![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.18.117.png)
+   ![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.20.301.png)
+   ![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.24.794.png)
+   
    - Bấm nút **"Tải tiện ích đã giải nén"** (Load unpacked) ở góc trên bên trái.
-   - Hộp thoại chọn thư mục xuất hiện -> Hãy ấn tổ hợp phím **`Ctrl + V`** (để dán đường dẫn đã copy sẵn) -> Bấm **Select Folder** (Chọn thư mục).
+   ![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.27.891.png)
+   - Hộp thoại chọn thư mục xuất hiện -> Ấn tổ hợp phím **`Ctrl + V`** (để dán đường dẫn đã tự động copy sẵn) -> Bấm **Select Folder** (Chọn thư mục).
+   ![](./pics/2026-11-08%2010-35-15.mp4_snapshot_01.34.700.png)
 
 ---
 
@@ -36,9 +45,9 @@ Tiện ích này không được đăng tải lên Chrome Web Store công khai. 
 
 ---
 
-## 🔄 Cách Cập Nhật Khi Có Phiên Bản Mới
+## Cách Cập Nhật Khi Có Phiên Bản Mới
 
 Khi tiện ích thông báo có phiên bản mới:
 1. Tải bản `.zip` mới về máy và giải nén.
 2. Chạy file **`install.bat`** (nếu dùng Windows) hoặc ghi đè các file mới vào thư mục cũ.
-3. Mở lại trang `chrome://extensions/` và bấm nút Tải lại tại ô tiện ích Hola Anisong.
+3. Mở lại trang `chrome://extensions/` và bấm nút Tải lại tại ô tiện ích.
